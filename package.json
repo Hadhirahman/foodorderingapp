@@ -1,0 +1,22 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hadhirahman/react-understand.git"
+  },
+  "author": "hadhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hadhirahman/react-understand/issues"
+  },
+  "homepage": "https://github.com/Hadhirahman/react-understand#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
