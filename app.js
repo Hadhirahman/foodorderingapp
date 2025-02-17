@@ -1,16 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+const Heading = () => {
+    return(
+    <div>
+        <h1>React eigteen</h1>
+    </div>)
+}
 
-const parent = React.createElement('div', { id: "parent" }, [
-    React.createElement('div', {}, [
-        React.createElement("h1", {}, "this is h1 for child 1"),
-        React.createElement("h2", {}, "this is h2 for child 1")]),
-    React.createElement('div', {}, [
-        React.createElement("h1", {}, "this is h1 for child2 "),
-        React.createElement("h2", {}, "this is h2 for child 2")])]);
+const Headings = () => (
+    <div>
+        <h1>React eigteens</h1>
+        <Heading />
+    </div>)
+
+
+
+
+
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(parent)
+root.render(<Headings />)
