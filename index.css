@@ -121,3 +121,17 @@
     cursor: pointer;
     margin-bottom: 20px;
   }
+
+
+  .card-shimer{
+    background: gray;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-shimercontent{
+    height: 400px;
+    background-color: #f0f0f0;
+  }
