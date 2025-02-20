@@ -109,7 +109,7 @@
 
   .btn-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top:20px;
   }
   .btn{
@@ -134,4 +134,14 @@
   .card-shimercontent{
     height: 400px;
     background-color: #f0f0f0;
+  }
+
+  .loginbtn{
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
   }
