@@ -2,6 +2,7 @@ import RestoCards from "./RestoCards"
 // import { restaurants } from "./utils/MockData"
 import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
+import { RESTAURENT_LIST } from "./utils/Constant"
 
 const Body=() => {
 
@@ -17,10 +18,15 @@ useEffect(()=>{
     fetchdata()
 },[])
 
-const fetchdata=async()=>{ 
-    const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.51600&lng=76.21570&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+const fetchdata=async()=>{  
+    const data= await fetch(RESTAURENT_LIST)
     const jsondata=await data.json()
-    // console.log(jsondata.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+//   console.log(jsondata?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants);
+  
+    if(jsondata?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants===undefined){
+
+        return fetchdata()
+    }
     setRestaurent(jsondata?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants)
     setFilteredrestsurent(jsondata?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants)
 
@@ -30,7 +36,8 @@ const fetchdata=async()=>{
 
 
 
-    return restaurent.length===0 ?(
+    if( restaurent.length===0 )
+        return(
         <div className="body-container">
 
         <div className="card-container">
@@ -45,13 +52,16 @@ const fetchdata=async()=>{
        <Shimmer/>
         </div>
         </div>
-    ):(
+    )
+    
+    
+    return (
         <div className="body-container">
     <h2 className="title">Top Restaurants</h2>
     <div className="btn-container">
         <button className="btn" onClick={()=>{
             const filterdata =restaurent.filter((restaurentfilter)=>restaurentfilter.info.avgRatingString>4.5)
-            setRestaurent(filterdata)
+            setFilteredrestsurent(filterdata)
         }}>top rating restaurant</button>
 <div className="search_container">
 

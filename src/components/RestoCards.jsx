@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const RestoCards=(props) => {
     
     
@@ -12,7 +14,7 @@ const RestoCards=(props) => {
       const cuisine = cuisines.join(", ");
              
                 return (
-                    
+                    <Link to={"/restaurant/"+id} className="link">
                   <div className="card" key={id}>
                     <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt={name} className="card-img" />
                     <div className="card-content">
@@ -25,6 +27,7 @@ const RestoCards=(props) => {
                         avgRatingString} / 5</p>
                     </div>
                   </div>
+                  </Link>
                 );
               
             

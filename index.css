@@ -34,15 +34,24 @@
     gap: 20px;
   }
   
-  .nav a {
+  .ulnav {
     text-decoration: none;
+    list-style-type: none;
     color: #555;
     font-size: 16px;
     transition: color 0.3s ease-in-out;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
   }
+  .link{
+    text-decoration: none;
+  }
+
   
-  .nav a:hover {
+  .nav li:hover {
     color: #007bff;
+    cursor: pointer;
   }
   
  
@@ -67,6 +76,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    justify-content: center; /* Centers the cards */
+    align-items: start; /* Ensures consistent alignment */
+    margin: 0 auto; /* Centers the grid */
   }
   
   /* Individual Card */
@@ -76,6 +88,13 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    max-width: 250px;
+    width: 100%; /* Ensures responsiveness */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced out */
+    align-items: stretch;
+    height: 100%; /* Makes all cards the same height */
   }
   
   .card:hover {
@@ -87,6 +106,7 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    
   }
   
   /* Card Content */
@@ -145,3 +165,111 @@
     cursor: pointer;
     margin-bottom: 20px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Restocard.css */
+
+.restocard {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 200px auto;
+  transition: transform 0.3s ease;
+  padding: 80px 20px; 
+}
+
+.restocard:hover {
+  transform: translateY(-5px);
+}
+
+.restocard-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.restocard-info {
+  padding: 20px;
+}
+
+.restocard-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.restocard-cuisines,
+.restocard-rating,
+.restocard-address,
+.restocard-contact,
+.restocard-hours {
+  margin: 8px 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.restocard-menu-title {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.restocard-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #e9ecef;
+}
+
+.menu-item-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.menu-item-price {
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .restocard {
+    max-width: 90%;
+  }
+  .restocard-image {
+    height: 200px;
+  }
+  .restocard-name {
+    font-size: 20px;
+  }
+}

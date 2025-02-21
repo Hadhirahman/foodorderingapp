@@ -1,32 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { Link } from "react-router";
 const Header = () => {
-    const [loginbtn,setLoginbtn]=useState("login")
+  const [loginbtn, setLoginbtn] = useState("login");
 
-
-    return (
-
-        <header className="header">
-        <div className="container">
-          {/* Logo */}
-          <div className="logo">
-            <a href="/">MyLogo</a>
-          </div>
-  
-          {/* Navigation */}
-          <nav className="nav">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <button className='loginbtn' onClick={()=>{
-               loginbtn ==="login"? setLoginbtn("Logout"):setLoginbtn("login")
-            }}>{loginbtn}</button>
-          </nav>
-  
+  return (
+    <header className="header">
+      <div className="container">
+        {/* Logo */}
+        <div className="logo">
+          <a href="/">MyLogo</a>
         </div>
-      </header>
 
-    )
-}
+        {/* Navigation */}
+        <nav className="nav">
+          <ul className="ulnav">
+          <Link to="/"><li>Home</li></Link>  
+          <Link to="/about">  <li>About</li></Link>
+          <Link to="/contact">  <li>Contact</li></Link>
+        
 
-export default Header
+          
+         <li> <button
+            className="loginbtn"
+            onClick={() => {
+              loginbtn === "login"
+                ? setLoginbtn("Logout")
+                : setLoginbtn("login");
+            }}
+          >
+            {loginbtn}
+          </button>
+          </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
