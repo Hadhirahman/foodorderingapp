@@ -1,8 +1,8 @@
 import RestoCards from "./RestoCards"
-// import { restaurants } from "./utils/MockData"
 import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer"
 import { RESTAURENT_LIST } from "./utils/Constant"
+import useOnlinestatus from "./utils/useOnlinestatus"
 
 const Body=() => {
 
@@ -11,8 +11,9 @@ const [filteredrestaurent,setFilteredrestsurent]=useState([])
 
 const [searchtext, setSearchtext] = useState("")
 
+const onlineStatus=useOnlinestatus()
 
-
+console.log(onlineStatus);
 
 useEffect(()=>{
     fetchdata()
@@ -21,7 +22,7 @@ useEffect(()=>{
 const fetchdata=async()=>{  
     const data= await fetch(RESTAURENT_LIST)
     const jsondata=await data.json()
-//   console.log(jsondata?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants);
+
   
     if(jsondata?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle?.restaurants===undefined){
 
@@ -33,6 +34,26 @@ const fetchdata=async()=>{
     
 }
 
+
+
+if(onlineStatus===false)
+    return(
+<div className="body-container">
+
+<div className="card-container">
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+<Shimmer/>
+</div>
+</div>
+)
+    
 
 
 

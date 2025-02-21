@@ -58,7 +58,7 @@
   
   /* Body Container */
 .body-container {
-    padding: 80px 20px; /* Space from header */
+    padding: 100px 20px; /* Space from header */
     max-width: 1200px;
     margin: 0 auto;
   }
