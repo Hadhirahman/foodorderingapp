@@ -1,5 +1,5 @@
-/* Header Container */
-.header {
+
+/* .header {
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -10,7 +10,6 @@
     padding: 15px 0;
   }
   
-  /* Container */
   .container {
     display: flex;
     justify-content: space-between;
@@ -20,7 +19,6 @@
     padding: 0 20px;
   }
   
-  /* Logo */
   .logo a {
     font-size: 24px;
     font-weight: bold;
@@ -28,7 +26,7 @@
     text-decoration: none;
   }
   
-  /* Navigation */
+
   .nav {
     display: flex;
     gap: 20px;
@@ -56,14 +54,14 @@
   
  
   
-  /* Body Container */
+  
 .body-container {
-    padding: 100px 20px; /* Space from header */
+    padding: 100px 20px; 
     max-width: 1200px;
     margin: 0 auto;
   }
   
-  /* Title */
+
   .title {
     text-align: center;
     font-size: 24px;
@@ -71,17 +69,16 @@
     margin-bottom: 20px;
   }
   
-  /* Card Container */
   .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center; /* Centers the cards */
-    align-items: start; /* Ensures consistent alignment */
-    margin: 0 auto; /* Centers the grid */
+    justify-content: center; 
+    align-items: start; 
+    margin: 0 auto;
   }
   
-  /* Individual Card */
+  
   .card {
     background: white;
     border-radius: 12px;
@@ -89,19 +86,19 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     max-width: 250px;
-    width: 100%; /* Ensures responsiveness */
+    width: 100%; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures content is spaced out */
+    justify-content: space-between; 
     align-items: stretch;
-    height: 100%; /* Makes all cards the same height */
+    height: 100%;
   }
   
   .card:hover {
     transform: scale(1.05);
   }
   
-  /* Card Image */
+  
   .card-img {
     width: 100%;
     height: 200px;
@@ -109,7 +106,7 @@
     
   }
   
-  /* Card Content */
+  
   .card-content {
     padding: 15px;
     text-align: center;
@@ -140,7 +137,7 @@
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-  }
+  } */
 
 
   .card-shimer{
@@ -156,7 +153,7 @@
     background-color: #f0f0f0;
   }
 
-  .loginbtn{
+  /* .loginbtn{
     padding: 10px 20px;
     background: #007bff;
     color: white;
@@ -166,12 +163,12 @@
     margin-bottom: 20px;
   }
 
+ */
 
 
 
 
-
-
+ 
 
 
 
@@ -182,7 +179,7 @@
 
   /* Restocard.css */
 
-.restocard {
+/* .restocard {
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -259,10 +256,10 @@
 
 .menu-item-price {
   color: #666;
-}
+} */
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .restocard {
     max-width: 90%;
   }
@@ -272,4 +269,8 @@
   .restocard-name {
     font-size: 20px;
   }
-}
+} */
+
+
+
+@import "tailwindcss";

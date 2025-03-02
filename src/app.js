@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Heder";
 import Body from "./components/Body";
@@ -6,6 +6,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestoDetailes from "./components/RestoDetailes";
+import MenuContext from "./components/utils/MenuContext";
 
 import {
   createBrowserRouter,
@@ -15,10 +16,13 @@ import {
 } from "react-router";
 
 const Applayout = () => {
+  const [menuName,setMenuName]=useState()
   return (
     <>
+    <MenuContext.Provider value={{menuName, setMenuName}}>
       <Header />
       <Outlet />
+    </MenuContext.Provider>
     </>
   );
 };
